@@ -1,0 +1,10 @@
+target
+kafka-playground.iml
+scripts/kafka
+scripts/kafka/**
+db
+csv
+.idea
+.idea/**
+db/
+*.iml
