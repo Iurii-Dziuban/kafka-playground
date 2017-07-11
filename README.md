@@ -1,8 +1,14 @@
 # kafka-playground
 Kafka related examples
 
-Kafka quick start: https://kafka.apache.org/quickstart
+Kafka quick start: **https://kafka.apache.org/quickstart**
 
+## Table of contents:
+ * [Examples](#examples)
+   * [Linux examples](#linux-examples)
+   * [Windows examples](#windows-examples)
+ 
+ 
 # Examples
 ## run_test_example
 - Start zookeeper
