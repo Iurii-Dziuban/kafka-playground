@@ -67,55 +67,80 @@ Download kafka from url above, unzip to the path `<project_path>/scripts/kafka`
 Further command line commands are executed from the directory `<project_path>/scripts/kafka` folder
 
 - Start zookeeper (one command line)
+
 `bin\windows\zookeeper-server-start.bat config\zookeeper.properties`
 
 - Start server (one command line)
+
 `bin\windows\kafka-server-start.bat config\server.properties`
 
 - Create a topic
+
 `bin\windows\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test`
+
 See the message: Created topic "test".
+
 **Note:** Zookeeper is on the port 2181
 
 - Test topic is created
+
 `bin\windows\kafka-topics.bat --list --zookeeper localhost:2181`
+
 See: test topic
 
 - Send messages to the topic (one command line)
+
 `bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic test`
+
 (Write couple lines of messages)
+
 **Note:** Server is on port is on the port 9092
 
 - Consume messages to the topic (one command line)
+
 `bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test --from-beginning`
+
 **Note:** Messages from previous section should be seen
+
 **Note:** Server is on port is on the port 9092
+
 **Note:** we can create another consumer in the other command line which will receive same messages.
 
 - Adding more brokers (cluster nodes)
+
 `copy config\server.properties config\server-1.properties`
+
 `copy config\server.properties config\server-2.properties`
+
  -- update properties for each new kafka server: broker.id, listeners, log.dir
  
 - Start more servers:
+
 `bin\windows\kafka-server-start.bat config\server-1.properties &`
+
 `bin\windows\kafka-server-start.bat config\server-2.properties &`
 
 - Create and describe replication-topic
+
 `bin\windows\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 3 --partitions 1 --topic replication-topic`
+
 `bin\windows\kafka-topics.bat --describe --zookeeper localhost:2181 --topic replication-topic`
 
 - Send messages to new topic
+
 `bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic replicated-topic`
 
 - Consume messages from new topic
+
 `bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic replicated-topic --from-beginning`
 
 stop the leader server and connect with consumer. Messages are received
 
 - Deleting topics
 Connect to zookeeper and provide topic name:
+
 `bin\windows\zookeeper-shell.bat localhost:2181 rmr /brokers/topics/{your_topic}`
+
 Example: `bin\windows\zookeeper-shell.bat localhost:2181 rmr /brokers/topics/streams-file-input`
 
 # Mac examples
@@ -125,6 +150,7 @@ Example: `bin\windows\zookeeper-shell.bat localhost:2181 rmr /brokers/topics/str
   1) `scripts/run_test_example-mac.sh`
   2) `scripts/run_fault_tolerance_example-mac.sh`
   3) `scripts/run_stream_example-mac.sh`
+  
 **Note:** Do not forget to clean `/tmp` directory from kafka runtime files before running the example!
 
 # Linux examples
@@ -133,5 +159,6 @@ Example: `bin\windows\zookeeper-shell.bat localhost:2181 rmr /brokers/topics/str
   1) `scripts/run_test_example.sh`
   2) `scripts/run_fault_tolerance_example.sh`
   3) `scripts/run_stream_example.sh`
+  
 **Note:** Do not forget to clean `/tmp` directory from kafka runtime files before running the example!  
   
