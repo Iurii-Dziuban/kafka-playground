@@ -122,16 +122,16 @@ Example: `bin\windows\zookeeper-shell.bat localhost:2181 rmr /brokers/topics/str
   Names similar to windows but with **.sh** extension and possible suffix **-mac** or without (for both Linux and Mac OS)
   Mac extension is different from Linux only in a way to open new terminal window
   Examples are 
-    1) scripts/run_test_example-mac.sh
-    2) scripts/run_fault_tolerance_example-mac.sh
-    3) scripts/run_stream_example-mac.sh
-**Note:** Do not forget to clean /tmp directory from kafka runtime files before running the example!
+  1) `scripts/run_test_example-mac.sh`
+  2) `scripts/run_fault_tolerance_example-mac.sh`
+  3) `scripts/run_stream_example-mac.sh`
+**Note:** Do not forget to clean `/tmp` directory from kafka runtime files before running the example!
 
 # Linux examples
   Names similar to windows but with **.sh** extension and without suffix **-mac**
   Examples are 
-  1) scripts/run_test_example.sh
-  2) scripts/run_fault_tolerance_example.sh
-  3) scripts/run_stream_example.sh
-**Note:** Do not forget to clean /tmp directory from kafka runtime files before running the example!  
+  1) `scripts/run_test_example.sh`
+  2) `scripts/run_fault_tolerance_example.sh`
+  3) `scripts/run_stream_example.sh`
+**Note:** Do not forget to clean `/tmp` directory from kafka runtime files before running the example!  
   
