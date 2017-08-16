@@ -147,6 +147,11 @@ Example: `bin\windows\zookeeper-shell.bat localhost:2181 rmr /brokers/topics/str
 
 # Linux and Mac examples
   Names similar to windows but with **.sh** extension
+
+**Note** Examples won`t work by starting one script. Manual work needed,
+so that zookeeper starts in separate terminal, each kafka server - separate terminal,
+each consumer or producer - separate terminal
+
   Examples are 
   1) `scripts/run_test_example.sh`
   2) `scripts/run_fault_tolerance_example.sh`
